@@ -1,0 +1,21 @@
+server:
+  port: 7000
+
+#server.port=7000
+#spring.application.name=pragra-gateway
+#eureka.client.service-url.default-zone=http://localhost:8761/eureka
+spring:
+  application:
+    name: pragra-gateway
+zuul:
+  routes:
+    books:
+      path: /book/**
+      serviceId: book-service
+    authors:
+      path: /author/**
+      serviceId: author-service
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
