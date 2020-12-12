@@ -10,6 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @EnableEurekaClient
 @SpringBootApplication
@@ -29,5 +30,10 @@ public class BookserviceApplication {
 			this.service.createBook(new Book(1L,"Uthopia","No One",330));
 			this.service.createBook(new Book(1L,"Test","No One",330));
 		};
+	}
+
+	@Bean
+	RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 }

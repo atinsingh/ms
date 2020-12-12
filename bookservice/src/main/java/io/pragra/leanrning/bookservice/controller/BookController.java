@@ -21,4 +21,11 @@ public class BookController {
     public List<Book> getBooks() {
         return this.service.getBooks();
     }
+
+    @GetMapping("/books/{id}")
+    public Book getBookByID(@PathVariable Long id ) {
+        return this.service.getBookById(id);
+    }
+
+
 }

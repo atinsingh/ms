@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: price-service
+  h2:
+    console:
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:price
+server:
+  port: 9020
+
+
